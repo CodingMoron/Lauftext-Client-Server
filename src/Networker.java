@@ -36,6 +36,7 @@ public class Networker {
 			socket.send(packet);
 			
 			DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
+			socket.setSoTimeout(5);
 			socket.receive(receivePacket);
 			socket.close();
 			
